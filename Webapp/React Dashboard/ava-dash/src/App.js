@@ -29,7 +29,7 @@ const App = () => {
                      <Sidebar />
                   </div>
                ) : (
-                  <div className='w-0 dark:vg-secondary-dark-bg'>
+                  <div className='w-0 dark:bg-secondary-dark-bg'>
                      <Sidebar />
                   </div>
                )}

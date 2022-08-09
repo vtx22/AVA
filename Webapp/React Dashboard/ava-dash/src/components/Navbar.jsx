@@ -49,7 +49,7 @@ const Navbar = () => {
                      <span className='text-grey-400 dark:text-gray-200 text-14'>Hi, </span> {' '}
                      <span className='text-grey-400 dark:text-gray-200 font-bold ml-1 text-14'>Fynn</span>
                   </p>
-                  <MdKeyboardArrowDown className='text-grey-400 text-14' />
+                  <MdKeyboardArrowDown className='text-grey-400 dark:text-white text-14' />
                </div>
             </TooltipComponent>
             {isClicked.notification && <Notification />}

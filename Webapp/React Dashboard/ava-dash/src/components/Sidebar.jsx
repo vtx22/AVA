@@ -24,10 +24,10 @@ const Sidebar = () => {
          {activeMenu && (<>
             <div className='flex justify-between items-center'>
                <Link to="/" onClick={handleCloseSideBar} className="items-center ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
-                  <SiShopware /> <span>AVA</span>
+                  <SiShopware />{' '}<span>AVA</span>
                </Link>
                <TooltipComponent content="Menu" position="BottomCenter">
-                  <button type="button" onClick={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)} className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden"><MdOutlineCancel /></button>
+                  <button type="button" onClick={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)} style={{ color: 'rgb(153,171,180)', borderRadius: '50%' }} className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden"><MdOutlineCancel /></button>
                </TooltipComponent>
             </div>
             <div className='mt-10'>
