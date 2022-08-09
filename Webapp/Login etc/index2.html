@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="css/style2.css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+
+        <script src="js/rtclock_main.js"></script>
+        <title>AVA</title>
+    </head>
+    <body onload="realTimeClock()">
+        <nav class="navbar">
+            <ul class="navbar-nav">
+                <li class="logo"> 
+                    <a href="index2.html" class="nav-link">
+                    <img src="img/ava_logo_boxed.png" alt="">
+                    </a>
+                </li>
+                <li class="nav-item selected">
+                    <a href="index2.html" class="nav-link"> 
+                    <i class="material-icons" id="selected">emoji_objects</i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index2.html" class="nav-link">
+                    <i class="material-icons">fireplace</i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index2.html" class="nav-link">
+                    <i class="material-icons">toys</i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="index2.html" class="nav-link">
+                    <i class="material-icons">event_note</i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <main>
+            <div class="flex-header">
+                <h1 id="top-header">
+                    Wetter
+                </h1>
+                <div class="small-clock" id="toprightclock"></div>
+            </div>
+            <div id="content-1">
+                <div id="graph-1">
+                    <canvas id="myChart"></canvas>
+                    <script src="js/chart-test.js"></script>
+                </div>
+                <div id="graph-1">
+                    <canvas id="myChart2"></canvas>
+                    <script src="js/chart-test2.js"></script>
+                </div>
+            </div>
+            <div id="content2">
+                
+            </div>
+            
+            
+            
+            
+        </main>
+    </body>
+</html>

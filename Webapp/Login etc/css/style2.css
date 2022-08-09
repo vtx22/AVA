@@ -1,0 +1,179 @@
+:root
+{
+    font-size: 16px;
+    font-family: 'Open Sans';
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0066ff;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #12D8FA;
+}
+
+
+body 
+{
+    color: rgb(255, 255, 255);
+    background-image: url(bg2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    scrollbar-width: none;
+    height: 100vh;
+}
+
+main 
+{
+    margin-left: 5rem;
+    padding: 1rem;
+}
+
+.navbar
+{
+    position: fixed;
+    background-color: rgba(0,0,0,0.25);
+    box-shadow: 0px 0px 36px 8px rgba(0,0,0,0.6);
+    width: 5rem;
+    height: 100vh;
+}
+
+.navbar-nav
+{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-item 
+{
+    display: flex;
+    margin: auto;
+    align-items: center;
+    margin-top: 2vh;
+    height: 5rem;
+    text-align: center;
+    width: 100%;
+
+}
+
+.nav-item .material-icons 
+{
+
+    font-size: 3rem;
+    background-color:  transparent;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+#selected
+{
+    color: white !important;
+}
+
+
+
+
+
+.logo img
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 4vh;
+    margin-bottom: 3vh;
+    width: auto;
+    height: 25px;
+}
+
+#content-1, #content-2
+{
+    display: flex;
+    flex-direction: row;
+    margin-top: 3rem;
+    margin-left: 3rem;
+    height: 40vh;
+}
+
+.nav-link 
+{
+    margin: auto;
+    
+}
+
+.navbar-nav .nav-link 
+{
+    -webkit-tap-highlight-color: transparent;
+  
+}
+
+
+
+
+.flex-header
+{
+    margin-top: 0;
+    height: 50px;
+    align-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.flex-header .small-clock 
+{
+    font-size: 20px;
+    font-weight: 500;
+}
+
+/* #content-1 #graph-1, #content-2 #graph-2
+{
+    border-radius: 10px;
+    padding: 5vh;
+    width: 30vw;
+    height: auto;
+    box-shadow: 0px 0px 36px 8px rgba(0,0,0,0.6);
+} */
+
+#content-1, #content-2
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: auto;
+    height: 40vh;
+}
+
+#graph-1 
+{
+    padding: 2rem;
+    position: relative;
+    width: 30%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 36px 8px rgba(0,0,0,0.6);
+    overflow: hidden;
+}
+
+#myChart 
+{
+    position: absolute;
+    height: 40vh;
+    width: auto;
+}
+
+.nav-item:hover, .selected
+{
+    background-color: rgba(0,0,0,0.25);
+}
