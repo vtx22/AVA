@@ -17,7 +17,7 @@ const NavButton = ({ title, customFunc, icon, color, dotColor }) => (<TooltipCom
 </button></TooltipComponent>)
 
 const Navbar = () => {
-   const { activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize } = useStateContext();
+   const { activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize, currentColor } = useStateContext();
 
    useEffect(() => {
       const handleResize = () => setScreenSize(window.innerWidth);
@@ -39,15 +39,15 @@ const Navbar = () => {
 
    return (
       <div className='flex justify-between p-2 md:mx-6 relative'>
-         <NavButton title="Menu" customFunc={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)} color="blue" icon={<AiOutlineMenu />} />
+         <NavButton title="Menu" customFunc={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)} color={currentColor} icon={<AiOutlineMenu />} />
          <div className='flex'>
-            <NavButton title="Notifications" customFunc={() => handleClick('notification')} color="blue" icon={<RiNotification3Line />} dotColor="#03C9D7" />
+            <NavButton title="Notifications" customFunc={() => handleClick('notification')} color={currentColor} icon={<RiNotification3Line />} dotColor="#03C9D7" />
             <TooltipComponent content="Profile" position='BottomCenter'>
                <div className='flex items-center gap-2 cursor-pointer p-1 hover:bg-light-grey rounded-lg' onClick={() => handleClick('userProfile')}>
                   <img src={avatar} className="rounded-full w-8 h-8" />
                   <p>
-                     <span className='text-grey-400 text-14'>Hi, </span> {' '}
-                     <span className='text-grey-400 font-bold ml-1 text-14'>Fynn</span>
+                     <span className='text-grey-400 dark:text-gray-200 text-14'>Hi, </span> {' '}
+                     <span className='text-grey-400 dark:text-gray-200 font-bold ml-1 text-14'>Fynn</span>
                   </p>
                   <MdKeyboardArrowDown className='text-grey-400 text-14' />
                </div>
