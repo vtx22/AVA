@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
@@ -19,7 +19,7 @@ const App = () => {
             <div className='flex relative dark:bg-main-dark-bg'>
                <div className='fixed right-4 bottom-4' style={{ zIndex: "1000" }}>
                   <TooltipComponent content="Settings" position="Top">
-                     <button type='button' className='text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white' style={{ background: currentColor, borderRadius: '50%' }} onClick={() => setThemeSettings(true)}>
+                     <button type='button' className={`text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white ${currentColor}`} style={{ borderRadius: '50%' }} onClick={() => setThemeSettings(true)}>
                         <FiSettings />
                      </button>
                   </TooltipComponent>
@@ -41,17 +41,22 @@ const App = () => {
 
                   <div>
                      {themeSettings && <ThemeSettings />}
+
                      <Routes>
-                        <Route path="/" element={<Home />} />
+                        /* Default redirects. Needed so that initially home isActive is set and the background color is visible */
+                        <Route path="*" element={<Navigate to="/home" />} />
+                        <Route path="/" element={<Navigate to="/home" />} />
+                        /* Site routes */
                         <Route path="/home" element={<Home />} />
-
-
                         <Route path="/weather" element={<Weather />} />
                      </Routes>
+
                   </div>
                </div>
             </div>
+
          </BrowserRouter>
+
       </div>
    )
 }

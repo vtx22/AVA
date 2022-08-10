@@ -8,12 +8,24 @@ import { earningData, SparklineAreaData, ecomPieChartData } from '../data/dummy'
 
 import { useStateContext } from '../contexts/ContextProvider'
 
+import { Button } from '../components'
+
 const Home = () => {
+   const { currentColor } = useStateContext();
+
    return (
-      <div className='mt-12'>
-         <div className='flex -flex-wrap lg:flex-nowrap justify-center'>
-            <div className='bg-white dark:text-grey-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full lg:w-80 p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-cover bg-center'>
-               Home
+      <div className='mt-15'>
+         <div className='flex flex-wrap lg:flex-nowrap justify-center'>
+            <div className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full  p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-contain bg-right'>
+               <div className='flex justify-between items-center'></div>
+               <div>
+                  <p className='font-bold text-gray-400'>Welcome,</p>
+                  <p className='text-xl'>Fynn</p>
+                  <div className='mt-6'>
+                     <Button bgColor={currentColor} color='white' size='md' borderRadius='10px' text='Update' />
+                  </div>
+
+               </div>
             </div>
          </div>
       </div>
