@@ -1,8 +1,7 @@
 import React from 'react';
 
-import { WiCloud, WiDayCloudy } from 'react-icons/wi';
+import { WiDayCloudy } from 'react-icons/wi';
 import { AiOutlineHome } from 'react-icons/ai';
-import { FiShoppingBag, FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
 
 export const links = [
    {
