@@ -37,19 +37,19 @@ const App = () => {
                   <div className='fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full'>
                      <Navbar />
                   </div>
+
+
+                  <div>
+                     {themeSettings && <ThemeSettings />}
+                     <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/home" element={<Home />} />
+
+
+                        <Route path="/weather" element={<Weather />} />
+                     </Routes>
+                  </div>
                </div>
-
-               <div>
-                  {themeSettings && <ThemeSettings />}
-                  <Routes>
-                     <Route path="/" element={<Home />} />
-                     <Route path="/home" element={<Home />} />
-
-
-                     <Route path="/weather" element={<Weather />} />
-                  </Routes>
-               </div>
-
             </div>
          </BrowserRouter>
       </div>
