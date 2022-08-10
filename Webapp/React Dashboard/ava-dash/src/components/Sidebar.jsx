@@ -5,11 +5,14 @@ import { SiShopware } from 'react-icons/si';
 import { MdOutlineCancel } from 'react-icons/md';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
-import { links } from "../data/dummy";
+import logoWhite from '../data/logoSingleWhite.png'
+import logoBlack from '../data/logoSingleBlack.png'
+
+import { links } from "../data/pageLinks";
 import { useStateContext } from '../contexts/ContextProvider';
 
 const Sidebar = () => {
-   const { activeMenu, setActiveMenu, screenSize, currentColor } = useStateContext();
+   const { activeMenu, setActiveMenu, screenSize, currentColor, currentMode } = useStateContext();
 
    const handleCloseSideBar = () => {
       if (activeMenu && screenSize <= 900) {
@@ -24,7 +27,7 @@ const Sidebar = () => {
          {activeMenu && (<>
             <div className='flex justify-between items-center'>
                <Link to="/" onClick={handleCloseSideBar} className="items-center ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900">
-                  <SiShopware />{' '}<span>AVA</span>
+                  <img src={currentMode === 'Dark' ? logoWhite : logoBlack} width='30' className='mr-5' /><span>Homecontrol</span>
                </Link>
                <TooltipComponent content="Menu" position="BottomCenter">
                   <button type="button" onClick={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)} style={{ color: 'rgb(153,171,180)', borderRadius: '50%' }} className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden"><MdOutlineCancel /></button>
@@ -37,7 +40,7 @@ const Sidebar = () => {
                         {item.title}
                      </p>
                      {item.links.map((link) => (
-                        <NavLink to={`/&{link.name}`} key={link.name} onClick={handleCloseSideBar} className={({ isActive }) => isActive ? activeLink : normalLink} style={({ isActive }) => ({ backgroundColor: isActive ? currentColor : '' })}>
+                        <NavLink to={`/${link.name}`} key={link.name} onClick={handleCloseSideBar} className={({ isActive }) => isActive ? activeLink : normalLink} style={({ isActive }) => ({ backgroundColor: isActive ? currentColor : '' })}>
                            {link.icon}
                            <span className='capitalize'>{link.name}</span>
                         </NavLink>
