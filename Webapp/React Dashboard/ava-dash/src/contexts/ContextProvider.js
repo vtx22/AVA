@@ -4,25 +4,21 @@ const StateContext = createContext();
 
 const initialState =
 {
-   chat: false,
-   cart: false,
    userProfile: false,
    notification: false,
 }
 
 export const ContextProvider = ({ children }) => {
    const [activeMenu, setActiveMenu] = useState(true);
-
    const [isClicked, setIsClicked] = useState(initialState);
+   const [screenSize, setScreenSize] = useState(undefined);
+   const [currentColor, setCurrentColor] = useState('bg-cyan-500');
+   const [currentMode, setCurrentMode] = useState('Dark');
+   const [themeSettings, setThemeSettings] = useState(false);
 
    const handleClick = (clicked) => {
-      setIsClicked({ ...initialState, [clicked]: true });
+      setIsClicked({ ...initialState, [clicked]: !isClicked[clicked] });
    }
-
-   const [screenSize, setScreenSize] = useState(undefined);
-   const [currentColor, setCurrentColor] = useState(localStorage.getItem('colorMode'));
-   const [currentMode, setCurrentMode] = useState(localStorage.getItem('themeMode'));
-   const [themeSettings, setThemeSettings] = useState(false);
 
    const setColor = (color) => {
       setCurrentColor(color);
@@ -39,11 +35,10 @@ export const ContextProvider = ({ children }) => {
    return (
       <StateContext.Provider value={{
          activeMenu, setActiveMenu,
-         isClicked, setIsClicked,
-         handleClick,
+         isClicked, setIsClicked, handleClick,
          screenSize, setScreenSize,
-         currentColor, setColor,
-         currentMode, setMode,
+         currentColor, setColor, setCurrentColor,
+         currentMode, setMode, setCurrentMode,
          themeSettings, setThemeSettings,
       }}>
          {children}
