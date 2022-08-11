@@ -6,11 +6,10 @@ const Weather = () => {
    const { currentColor } = useStateContext();
    return (
       <div className='pt-20 sm:pt-5'>
-         <div className='md:pl-10 pl-5 dark:text-gray-400 font-bold text-2xl'>
+         <div className='md:pl-10 pl-5 dark:text-gray-400 font-bold text-2xl '>
             Outside
          </div>
-
-         <div className='flex flex-wrap lg:flex-nowrap justify-center'>
+         <div className='flex flex-wrap lg:flex-nowrap justify-center pt-1'>
             <div className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg w-44 h-44 rounded-xl w-full p-8 pt-9 m-3 drop-shadow-xl'>
                <div className='flex justify-between items-center'></div>
                <div>
@@ -29,14 +28,16 @@ const Weather = () => {
             </div>
 
          </div>
-         <div className='mt-10'>
-            <hr className='opacity-10 width-1'></hr>
+         <div className='mt-10 grid grid-rows-1 divide-y mx-auto place-items-center'>
+
+            <span className={`h-0.5 w-5/6 ${currentColor}`}></span>
+
          </div>
          <div>
 
          </div>
 
-      </div>
+      </div >
    )
 }
 
