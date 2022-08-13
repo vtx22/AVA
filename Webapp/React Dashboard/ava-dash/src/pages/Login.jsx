@@ -32,7 +32,6 @@ const Login = () => {
 
          if (userData.password !== pass && uname !== localStorage.getItem('loggedInUser')) {
             // Invalid password
-            setErrorMessages({ name: "pass", message: loginErrors.pass });
             setFalseCred(true);
          } else {
             setIsSubmitted(true);
@@ -43,7 +42,6 @@ const Login = () => {
          }
       } else {
          // Username not found
-         setErrorMessages({ name: "uname", message: loginErrors.uname });
          setFalseCred(true);
       }
    };

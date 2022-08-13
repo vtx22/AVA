@@ -15,6 +15,12 @@ export const users = [
       type: 'huso',
       avatar: defaultAvatar,
    },
+   {
+      name: 'Tab1',
+      password: '',
+      type: 'tablet',
+      avatar: defaultAvatar,
+   },
 
 
 ];

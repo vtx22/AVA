@@ -50,16 +50,20 @@ const Navbar = () => {
          <NavButton title="Menu" customFunc={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)} color={currentMode === 'Dark' ? 'white' : 'black'} icon={<AiOutlineMenu />} />
          <div className='flex'>
             <NavButton title="Notifications" customFunc={() => handleClick('notification')} color={currentMode === 'Dark' ? 'white' : 'black'} icon={<RiNotification3Line />} dotColor="#03C9D7" />
-            <TooltipComponent content="Profile" position='BottomCenter'>
-               <div className='flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray hover:dark:bg-secondary-dark-bg rounded-lg' onClick={() => handleClick('userProfile')}>
-                  <img src={avatar} className="rounded-full w-8 h-8" />
-                  <p>
-                     <span className='text-gray-400 dark:text-gray-200 text-14'>Hi, </span> {' '}
-                     <span className='text-gray-400 dark:text-gray-200 font-bold ml-1 text-14'>{currentUser.name}</span>
-                  </p>
-                  <MdKeyboardArrowDown className='text-gray-400 dark:text-white text-14' />
-               </div>
-            </TooltipComponent>
+            {currentUser.type !== 'tablet' &&
+               <TooltipComponent content="Profile" position='BottomCenter'>
+
+                  <div className='flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray hover:dark:bg-secondary-dark-bg rounded-lg' onClick={() => handleClick('userProfile')}>
+                     <img src={currentUser.avatar} className="rounded-full w-8 h-8" />
+                     <p>
+                        <span className='text-gray-400 dark:text-gray-200 text-14'>Hi, </span> {' '}
+                        <span className='text-gray-400 dark:text-gray-200 font-bold ml-1 text-14'>{currentUser.name}</span>
+                     </p>
+                     <MdKeyboardArrowDown className='text-gray-400 dark:text-white text-14' />
+                  </div>
+               </TooltipComponent>}
+
+
             {isClicked.notification && <Notification />}
             {isClicked.userProfile && <UserProfile />}
          </div>

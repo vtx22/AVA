@@ -2,13 +2,15 @@ import React from 'react';
 import { MdOutlineCancel } from 'react-icons/md';
 import { BsCheck } from 'react-icons/bs';
 import { TooltipComponent } from '@syncfusion/ej2-react-popups';
-
+import { Button } from '.';
 import { themeColors } from '../data/themeSettings';
 
 import { useStateContext } from '../contexts/ContextProvider';
+import { users } from '../data/users.js'
 
 const ThemeSettings = () => {
-   const { setColor, setMode, currentMode, currentColor, setThemeSettings } = useStateContext();
+   const { setColor, setMode, currentMode, currentColor, setThemeSettings, loggedInUser, handleLogout } = useStateContext();
+   const currentUser = users.find((user) => user.name === loggedInUser);
 
    return (
       <div className='bg-half-transparent w-screen fixed nav-item top-0 right-0'>
@@ -47,6 +49,16 @@ const ThemeSettings = () => {
                      </TooltipComponent>
                   ))}
                </div>
+            </div>
+            <div className="ml-4 mt-auto mb-5">
+               <Button
+                  color="white"
+                  bgColor={currentColor}
+                  text="Logout"
+                  borderRadius="10px"
+                  width="full"
+                  onClickFunc={handleLogout}
+               />
             </div>
          </div>
       </div>

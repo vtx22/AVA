@@ -5,7 +5,7 @@ import { TooltipComponent } from '@syncfusion/ej2-react-popups';
 
 import { Navbar, Footer, Sidebar, ThemeSettings } from '../components';
 
-import { Home, Weather, Users, Devices } from './';
+import { Home, Weather, Users, Devices, Cameras, Energy } from './';
 
 import { useStateContext } from '../contexts/ContextProvider';
 
@@ -60,6 +60,8 @@ const MainPage = () => {
                         <Route path="/weather" element={<Weather />} />
                         <Route path="/users" element={<Users />} />
                         <Route path="/devices" element={<Devices />} />
+                        <Route path="/cameras" element={<Cameras />} />
+                        <Route path="/energy" element={<Energy />} />
                      </Routes>
 
                   </div>

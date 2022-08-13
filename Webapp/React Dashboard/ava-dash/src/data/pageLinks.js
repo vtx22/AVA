@@ -5,6 +5,7 @@ import { AiOutlineHome, AiOutlineUser } from 'react-icons/ai';
 import { GoPackage } from 'react-icons/go';
 import { RiDeviceLine } from 'react-icons/ri';
 import { MdBolt } from 'react-icons/md';
+import { HiOutlineVideoCamera } from 'react-icons/hi'
 
 export const links = [
    {
@@ -20,6 +21,10 @@ export const links = [
    {
       title: 'Apps',
       links: [
+         {
+            name: 'cameras',
+            icon: <HiOutlineVideoCamera />,
+         },
          {
             name: 'weather',
             icon: <WiDayCloudy />,
