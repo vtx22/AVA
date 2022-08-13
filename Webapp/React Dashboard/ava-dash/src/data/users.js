@@ -18,3 +18,8 @@ export const users = [
 
 
 ];
+
+export const loginErrors = {
+   uname: "invalid username",
+   pass: "invalid password"
+};

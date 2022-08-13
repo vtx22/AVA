@@ -9,10 +9,11 @@ import { earningData, SparklineAreaData, ecomPieChartData } from '../data/dummy'
 import { useStateContext } from '../contexts/ContextProvider'
 
 import { Button } from '../components'
+import { users } from '../data/users'
 
 const Home = () => {
-   const { currentColor } = useStateContext();
-
+   const { currentColor, loggedInUser } = useStateContext();
+   const currentUser = users.find((user) => user.name === loggedInUser);
    return (
       <div className='mt-15'>
          <div className='flex flex-wrap lg:flex-nowrap justify-center'>
@@ -20,7 +21,7 @@ const Home = () => {
                <div className='flex justify-between items-center'></div>
                <div>
                   <p className='font-bold text-gray-400'>Welcome,</p>
-                  <p className='text-xl'>Fynn</p>
+                  <p className='text-xl capitalize'>{currentUser.name}</p>
                   <div className='mt-6'>
                      <Button bgColor={currentColor} color='white' size='md' borderRadius='10px' text='Update' />
                   </div>
