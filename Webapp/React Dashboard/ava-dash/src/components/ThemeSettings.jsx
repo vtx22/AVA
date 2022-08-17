@@ -50,16 +50,17 @@ const ThemeSettings = () => {
                   ))}
                </div>
             </div>
-            <div className="ml-4 mt-auto mb-5">
-               <Button
-                  color="white"
-                  bgColor={currentColor}
-                  text="Logout"
-                  borderRadius="10px"
-                  width="full"
-                  onClickFunc={handleLogout}
-               />
-            </div>
+            {currentUser.type === 'tablet' &&
+               <div className="ml-4 mt-auto mb-5">
+                  <Button
+                     color="white"
+                     bgColor={currentColor}
+                     text="Logout"
+                     borderRadius="10px"
+                     width="full"
+                     onClickFunc={handleLogout}
+                  />
+               </div>}
          </div>
       </div>
    )

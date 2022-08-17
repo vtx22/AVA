@@ -8,7 +8,7 @@ import { earningData, SparklineAreaData, ecomPieChartData } from '../data/dummy'
 
 import { useStateContext } from '../contexts/ContextProvider'
 
-import { Button } from '../components'
+import { Button, LineChart } from '../components'
 import { users } from '../data/users'
 
 const Home = () => {
@@ -16,7 +16,7 @@ const Home = () => {
    const currentUser = users.find((user) => user.name === loggedInUser);
    return (
       <div className='mt-15'>
-         <div className='flex flex-wrap lg:flex-nowrap justify-center'>
+         <div className='flex flex-wrap  justify-center'>
             <div className='bg-white dark:text-gray-200 dark:bg-secondary-dark-bg h-44 rounded-xl w-full  p-8 pt-9 m-3 bg-hero-pattern bg-no-repeat bg-contain bg-right'>
                <div className='flex justify-between items-center'></div>
                <div>
@@ -27,6 +27,9 @@ const Home = () => {
                   </div>
 
                </div>
+            </div>
+            <div className='rounded-xl'>
+               <LineChart></LineChart>
             </div>
          </div>
       </div>
