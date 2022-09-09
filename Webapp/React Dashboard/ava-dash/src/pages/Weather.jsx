@@ -61,6 +61,9 @@ const Weather = () => {
             <span className={`h-0.5 w-5/6 ${currentColor}`}></span>
 
          </div>
+         <div className='mt-10 grid grid-rows-1 place-items-center'>
+            <iframe className='w-4/5 h-96' src="https://www.rainviewer.com/map.html?loc=49.6235,11.1199,12&oFa=0&oC=1&oU=0&oCS=1&oF=1&oAP=0&c=7&o=83&lm=1&layer=radar&sm=1&sn=1&undefined=1"></iframe>
+         </div>
          <div>
 
          </div>
